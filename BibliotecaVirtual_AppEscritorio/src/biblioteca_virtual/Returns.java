@@ -61,11 +61,11 @@ public class Returns extends javax.swing.JPanel {
         add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         Text1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text1.setText("Libro ID");
+        Text1.setText("Libro ISBN");
         add(Text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         Text2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text2.setText("Folio Usuario");
+        Text2.setText("ID Usuario");
         add(Text2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jSeparator1.setForeground(new java.awt.Color(0, 153, 255));
@@ -82,7 +82,7 @@ public class Returns extends javax.swing.JPanel {
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 10, 350));
 
         book_id.setForeground(new java.awt.Color(102, 102, 102));
-        book_id.setText("Ingrese el ID del Libro a devolver");
+        book_id.setText("Ingrese el ISBN del Libro a devolver");
         book_id.setBorder(null);
         book_id.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -97,7 +97,7 @@ public class Returns extends javax.swing.JPanel {
         add(book_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 260, 30));
 
         folio.setForeground(new java.awt.Color(102, 102, 102));
-        folio.setText("Ingrese el folio del usuario");
+        folio.setText("Ingrese el ID del usuario");
         folio.setBorder(null);
         folio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

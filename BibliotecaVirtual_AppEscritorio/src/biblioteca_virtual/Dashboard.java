@@ -28,7 +28,7 @@ public class Dashboard extends javax.swing.JFrame {
         int dia = now.getDayOfMonth();
         int month = now.getMonthValue();
         String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"," ;Septiembre"
-            ,"Octubre","Noviembre","Diciemrbre"};
+            ,"Octubre","Noviembre","Diciembre"};
         fecha.setText("Hoy es "+dia+" de "+meses[month - 1]+" de "+year);
         
         Principal p1 = new Principal();
@@ -78,7 +78,6 @@ public class Dashboard extends javax.swing.JFrame {
         Title = new javax.swing.JPanel();
         red_squr = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
-        slogan = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -262,8 +261,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         app_name.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         app_name.setForeground(new java.awt.Color(255, 255, 255));
-        app_name.setText("iLib");
-        Menu.add(app_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
+        app_name.setText("Biblioteca Popular");
+        Menu.add(app_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
         Menu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 20));
@@ -371,10 +370,6 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         Background.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, -1));
-
-        slogan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        slogan.setText("We ♥  the reading!");
-        Background.add(slogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 190, 30));
 
         content.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -693,6 +688,5 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel red_squr;
-    private javax.swing.JLabel slogan;
     // End of variables declaration//GEN-END:variables
 }

@@ -163,7 +163,7 @@ public class UpUsers extends javax.swing.JPanel {
         add(Text5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         ap2.setForeground(new java.awt.Color(102, 102, 102));
-        ap2.setText("Ingrese el apellido materno");
+        ap2.setText("Ingrese el email");
         ap2.setBorder(null);
         ap2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

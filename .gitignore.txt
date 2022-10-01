@@ -1,0 +1,3 @@
+.BibliotecaVirtual_AppEscritorio/
+.Api_Biblioteca/
+.bibliotecaAngular/

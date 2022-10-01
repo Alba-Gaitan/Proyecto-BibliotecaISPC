@@ -25,11 +25,11 @@ CSS /Bootstrap (a elección)
 JAVASCRIPT (opcional) 
 ANGULAR (Módulos / Componentes y conexión mediante servicios)
 
-##Integrantes
+## Integrantes
 
-✔️ Gil Camila
-✔️ Storello Brenda
-✔️ Gaitan Alba
+✔️  Gil Camila.\
+✔️  Storello Brenda.\
+✔️  Gaitan Alba.\
 
 
 

@@ -1,4 +1,4 @@
-## Proyecto Gestión Biblioteca 
+# Proyecto Gestión Biblioteca 
 
 Llegó una solicitud a la Consultora ISPC para renovar un sistema de gestión de libros para la “Biblioteca Popular Los Lectores”.
 Hay que analizar el caso propuesto con los requerimientos entregados por el cliente potencial. Este cliente solicita que se anexe a la aplicación de escritorio, un entorno web para autogestionar las reservas de libros por cada uno de los socios.
@@ -24,6 +24,12 @@ HTML
 CSS /Bootstrap (a elección)
 JAVASCRIPT (opcional) 
 ANGULAR (Módulos / Componentes y conexión mediante servicios)
+
+##Integrantes
+
+✔️ Gil Camila
+✔️ Storello Brenda
+✔️ Gaitan Alba
 
 
 

@@ -13,7 +13,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
-import static biblioteca_virtual.Dashboard.content;
+import static biblioteca_virtual.Dashboard.Login;
 /**
  *
  * @author Antonio
@@ -34,8 +34,7 @@ public class UpBooks extends javax.swing.JPanel {
         edition = false;
     }
     
-    public UpBooks(String bid, String btitle /*String bdate */, String bauthor, String bcategory, 
-          /*  String bedit, String blang, String bpages, String bdesc,*/ String bejem, String bstock, String bavai){
+    public UpBooks(String bid, String btitle, String bauthor, String bcategory, String bstock, String bavai){
         initComponents();
         conn = new Connect();
         reg = conn.getConnection();
@@ -44,14 +43,8 @@ public class UpBooks extends javax.swing.JPanel {
         origId = bid;
         id.setText(bid);
         title.setText(btitle);
-//        date.setText(bdate);
         author.setText(bauthor);
         category.setText(bcategory);
-//        edit.setText(bedit);
-//        lang.setText(blang);
-//        pages.setText(bpages);
-//        descr.setText(bdesc);
-        ejem.setText(bejem);
         stock.setText(bstock);
         available.setText(bavai);
         
@@ -87,9 +80,6 @@ public class UpBooks extends javax.swing.JPanel {
         Text13 = new javax.swing.JLabel();
         stock = new javax.swing.JTextField();
         jSeparator14 = new javax.swing.JSeparator();
-        Text14 = new javax.swing.JLabel();
-        ejem = new javax.swing.JTextField();
-        jSeparator15 = new javax.swing.JSeparator();
         available = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
         Text15 = new javax.swing.JLabel();
@@ -112,8 +102,8 @@ public class UpBooks extends javax.swing.JPanel {
         jSeparator3.setPreferredSize(new java.awt.Dimension(200, 10));
         add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 10, 350));
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        button.setBackground(new java.awt.Color(63, 72, 204));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
@@ -133,7 +123,7 @@ public class UpBooks extends javax.swing.JPanel {
         jLabel1.setText("Subir");
         button.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, 30));
 
-        add(button, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 260, 50));
+        add(button, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 260, 50));
 
         Text3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Text3.setText("ISBN");
@@ -209,7 +199,7 @@ public class UpBooks extends javax.swing.JPanel {
         add(Text9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, -1, -1));
 
         category.setForeground(new java.awt.Color(102, 102, 102));
-        category.setText("Ingrese la Categoría del Libro");
+        category.setText("Ingrese el genero del Libro");
         category.setBorder(null);
         category.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -250,29 +240,6 @@ public class UpBooks extends javax.swing.JPanel {
         jSeparator14.setPreferredSize(new java.awt.Dimension(200, 10));
         add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 80, 10));
 
-        Text14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Text14.setText("Ejemplares");
-        add(Text14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, -1, -1));
-
-        ejem.setForeground(new java.awt.Color(102, 102, 102));
-        ejem.setText("Ingrese la cantidad de ejemplares");
-        ejem.setBorder(null);
-        ejem.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                ejemMousePressed(evt);
-            }
-        });
-        ejem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ejemActionPerformed(evt);
-            }
-        });
-        add(ejem, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 260, 30));
-
-        jSeparator15.setForeground(new java.awt.Color(0, 153, 255));
-        jSeparator15.setPreferredSize(new java.awt.Dimension(200, 10));
-        add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, 260, 10));
-
         available.setForeground(new java.awt.Color(102, 102, 102));
         available.setText("Cantidad a prestar");
         available.setBorder(null);
@@ -306,32 +273,21 @@ public class UpBooks extends javax.swing.JPanel {
     }//GEN-LAST:event_buttonMouseExited
 
     private void idMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idMousePressed
-       if(id.getText().equals("Ingrese el ID del Libro"))
+       if(id.getText().equals("Ingrese el ISBN del Libro"))
         id.setText("");
        if(title.getText().equals("") || title.getText() == null || title.getText().equals(" "))
         title.setText("Ingrese el Título");
-  /*     if(date.getText().equals("") || date.getText() == null || date.getText().equals(" "))
-        date.setText("Ingrese la Fecha de Publicación");
-  */
+ 
        if(author.getText().equals("") || author.getText() == null || author.getText().equals(" "))
         author.setText("Ingrese el nombre del Autor/es");
        if(category.getText().equals("") || category.getText() == null || category.getText().equals(" "))
-        category.setText("Ingrese la Categoría del Libro");
- /*      if(edit.getText().equals("") || edit.getText() == null || edit.getText().equals(" "))
-        edit.setText("Ingrese la edición");
-       if(lang.getText().equals("") || lang.getText() == null || lang.getText().equals(" "))
-        lang.setText("Ingrese el idioma del Libro");
-       if(pages.getText().equals("") || pages.getText() == null || pages.getText().equals(" "))
-        pages.setText("Ingrese la cantidad de páginas totales");
-       if(descr.getText().equals("") || descr.getText() == null || descr.getText().equals(" "))
-        descr.setText("Ingrese la descripción del Libro");
- */
+        category.setText("Ingrese el genero del Libro");
+
        if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
         stock.setText("Cantidad Total");
        if(available.getText().equals("") || available.getText() == null || available.getText().equals(" "))
         available.setText("Cantidad a prestar");
-       if(ejem.getText().equals("") || ejem.getText() == null || ejem.getText().equals(" "))
-        ejem.setText("Ingrese la cantidad de ejemplares");
+       
     }//GEN-LAST:event_idMousePressed
 
     private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
@@ -343,35 +299,45 @@ public class UpBooks extends javax.swing.JPanel {
         title.setText("");
        if(id.getText().equals("") || id.getText() == null || id.getText().equals(" "))
         id.setText("Ingrese el ISBN del Libro");
-     /*  if(date.getText().equals("") || date.getText() == null || date.getText().equals(" "))
-        date.setText("Ingrese la Fecha de Publicación");
-     */
+   
        if(author.getText().equals("") || author.getText() == null || author.getText().equals(" "))
         author.setText("Ingrese el nombre del Autor/es");
        if(category.getText().equals("") || category.getText() == null || category.getText().equals(" "))
-        category.setText("Ingrese la Categoría del Libro");
-    /*   if(edit.getText().equals("") || edit.getText() == null || edit.getText().equals(" "))
-        edit.setText("Ingrese la edición");
-    
-       if(lang.getText().equals("") || lang.getText() == null || lang.getText().equals(" "))
-        lang.setText("Ingrese el idioma del Libro");
-       if(pages.getText().equals("") || pages.getText() == null || pages.getText().equals(" "))
-        pages.setText("Ingrese la cantidad de páginas totales");
-       if(descr.getText().equals("") || descr.getText() == null || descr.getText().equals(" "))
-        descr.setText("Ingrese la descripción del Libro");
-    */
+        category.setText("Ingrese el genero del Libro");
+
        if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
         stock.setText("Cantidad Total");
        if(available.getText().equals("") || available.getText() == null || available.getText().equals(" "))
         available.setText("Cantidad a prestar");
-       if(ejem.getText().equals("") || ejem.getText() == null || ejem.getText().equals(" "))
-        ejem.setText("Ingrese la cantidad de ejemplares");
+       
     }//GEN-LAST:event_titleMousePressed
 
     private void titleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_titleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_titleActionPerformed
 
+    private void dateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateMousePressed
+        
+       if(id.getText().equals("") || id.getText() == null || id.getText().equals(" "))
+        id.setText("Ingrese el ISBN del Libro");
+       if(title.getText().equals("") || title.getText() == null || title.getText().equals(" "))
+        title.setText("Ingrese el Título");
+       if(author.getText().equals("") || author.getText() == null || author.getText().equals(" "))
+        author.setText("Ingrese el nombre del Autor/es");
+       if(category.getText().equals("") || category.getText() == null || category.getText().equals(" "))
+        category.setText("Ingrese el genero del Libro");
+     
+       if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
+        stock.setText("Cantidad Total");
+       if(available.getText().equals("") || available.getText() == null || available.getText().equals(" "))
+        available.setText("Cantidad a prestar");
+     
+    }//GEN-LAST:event_dateMousePressed
+
+    private void dateActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        // TODO add your handling code here:
+    }
+    
     private void authorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_authorMousePressed
         if(author.getText().equals("Ingrese el nombre del Autor/es"))
         author.setText("");
@@ -379,26 +345,15 @@ public class UpBooks extends javax.swing.JPanel {
         id.setText("Ingrese el ISBN del Libro");
        if(title.getText().equals("") || title.getText() == null || title.getText().equals(" "))
         title.setText("Ingrese el Título");
-  /*     if(date.getText().equals("") || date.getText() == null || date.getText().equals(" "))
-        date.setText("Ingrese la Fecha de Publicación");
-*/
+  
        if(category.getText().equals("") || category.getText() == null || category.getText().equals(" "))
         category.setText("Ingrese la Categoría del Libro");
- /*      if(edit.getText().equals("") || edit.getText() == null || edit.getText().equals(" "))
-        edit.setText("Ingrese la edición");
-       if(lang.getText().equals("") || lang.getText() == null || lang.getText().equals(" "))
-        lang.setText("Ingrese el idioma del Libro");
-       if(pages.getText().equals("") || pages.getText() == null || pages.getText().equals(" "))
-        pages.setText("Ingrese la cantidad de páginas totales");
-       if(descr.getText().equals("") || descr.getText() == null || descr.getText().equals(" "))
-        descr.setText("Ingrese la descripción del Libro");
-*/
+ 
        if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
         stock.setText("Cantidad Total");
        if(available.getText().equals("") || available.getText() == null || available.getText().equals(" "))
         available.setText("Cantidad a prestar");
-       if(ejem.getText().equals("") || ejem.getText() == null || ejem.getText().equals(" "))
-        ejem.setText("Ingrese la cantidad de ejemplares");
+       
     }//GEN-LAST:event_authorMousePressed
 
     private void authorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_authorActionPerformed
@@ -406,33 +361,20 @@ public class UpBooks extends javax.swing.JPanel {
     }//GEN-LAST:event_authorActionPerformed
 
     private void categoryMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_categoryMousePressed
-        if(category.getText().equals("Ingrese la Categoría del Libro"))
+        if(category.getText().equals("Ingrese el genero del Libro"))
         category.setText("");
        if(id.getText().equals("") || id.getText() == null || id.getText().equals(" "))
         id.setText("Ingrese el ISBN del Libro");
        if(title.getText().equals("") || title.getText() == null || title.getText().equals(" "))
         title.setText("Ingrese el Título");
-       /*
-       if(date.getText().equals("") || date.getText() == null || date.getText().equals(" "))
-        date.setText("Ingrese la Fecha de Publicación");
-        */
+     
        if(author.getText().equals("") || author.getText() == null || author.getText().equals(" "))
         author.setText("Ingrese el nombre del Autor/es");
-    /*   if(edit.getText().equals("") || edit.getText() == null || edit.getText().equals(" "))
-        edit.setText("Ingrese la edición");
-       if(lang.getText().equals("") || lang.getText() == null || lang.getText().equals(" "))
-        lang.setText("Ingrese el idioma del Libro");
-       if(pages.getText().equals("") || pages.getText() == null || pages.getText().equals(" "))
-        pages.setText("Ingrese la cantidad de páginas totales");
-       if(descr.getText().equals("") || descr.getText() == null || descr.getText().equals(" "))
-        descr.setText("Ingrese la descripción del Libro");
-   */
-       if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
+   if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
         stock.setText("Cantidad Total");
        if(available.getText().equals("") || available.getText() == null || available.getText().equals(" "))
         available.setText("Cantidad a prestar");
-       if(ejem.getText().equals("") || ejem.getText() == null || ejem.getText().equals(" "))
-        ejem.setText("Ingrese la cantidad de ejemplares");
+     
     }//GEN-LAST:event_categoryMousePressed
 
     private void categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryActionPerformed
@@ -446,64 +388,20 @@ public class UpBooks extends javax.swing.JPanel {
         id.setText("Ingrese el ISBN del Libro");
        if(title.getText().equals("") || title.getText() == null || title.getText().equals(" "))
         title.setText("Ingrese el Título");
-   /*    if(date.getText().equals("") || date.getText() == null || date.getText().equals(" "))
-        date.setText("Ingrese la Fecha de Publicación");
-*/
+  
        if(author.getText().equals("") || author.getText() == null || author.getText().equals(" "))
         author.setText("Ingrese el nombre del Autor/es");
        if(category.getText().equals("") || category.getText() == null || category.getText().equals(" "))
-        category.setText("Ingrese la Categoría del Libro");
-   /*    if(edit.getText().equals("") || edit.getText() == null || edit.getText().equals(" "))
-        edit.setText("Ingrese la edición");
-       if(lang.getText().equals("") || lang.getText() == null || lang.getText().equals(" "))
-        lang.setText("Ingrese el idioma del Libro");
-       if(pages.getText().equals("") || pages.getText() == null || pages.getText().equals(" "))
-        pages.setText("Ingrese la cantidad de páginas totales");
-       if(descr.getText().equals("") || descr.getText() == null || descr.getText().equals(" "))
-        descr.setText("Ingrese la descripción del Libro");
-*/
+        category.setText("Ingrese el genero del Libro");
+  
        if(available.getText().equals("") || available.getText() == null || available.getText().equals(" "))
         available.setText("Cantidad a prestar");
-       if(ejem.getText().equals("") || ejem.getText() == null || ejem.getText().equals(" "))
-        ejem.setText("Ingrese la cantidad de ejemplares");
+      
     }//GEN-LAST:event_stockMousePressed
 
     private void stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stockActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_stockActionPerformed
-
-    private void ejemMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ejemMousePressed
-        if(ejem.getText().equals("Ingrese la cantidad de ejemplares"))
-        ejem.setText("");
-       if(id.getText().equals("") || id.getText() == null || id.getText().equals(" "))
-        id.setText("Ingrese el ISBN del Libro");
-       if(title.getText().equals("") || title.getText() == null || title.getText().equals(" "))
-        title.setText("Ingrese el Título");
-  /*     if(date.getText().equals("") || date.getText() == null || date.getText().equals(" "))
-        date.setText("Ingrese la Fecha de Publicación");
-*/
-       if(author.getText().equals("") || author.getText() == null || author.getText().equals(" "))
-        author.setText("Ingrese el nombre del Autor/es");
-       if(category.getText().equals("") || category.getText() == null || category.getText().equals(" "))
-        category.setText("Ingrese la Categoría del Libro");
-/*       if(edit.getText().equals("") || edit.getText() == null || edit.getText().equals(" "))
-        edit.setText("Ingrese la edición");
-       if(lang.getText().equals("") || lang.getText() == null || lang.getText().equals(" "))
-        lang.setText("Ingrese el idioma del Libro");
-       if(pages.getText().equals("") || pages.getText() == null || pages.getText().equals(" "))
-        pages.setText("Ingrese la cantidad de páginas totales");
-       if(descr.getText().equals("") || descr.getText() == null || descr.getText().equals(" "))
-        descr.setText("Ingrese la descripción del Libro");
-*/
-       if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
-        stock.setText("Cantidad Total");
-       if(available.getText().equals("") || available.getText() == null || available.getText().equals(" "))
-        available.setText("Cantidad a prestar");
-    }//GEN-LAST:event_ejemMousePressed
-
-    private void ejemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ejemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ejemActionPerformed
 
     private void availableMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_availableMousePressed
         if(available.getText().equals("Cantidad a prestar"))
@@ -512,26 +410,15 @@ public class UpBooks extends javax.swing.JPanel {
         id.setText("Ingrese el ISBN del Libro");
        if(title.getText().equals("") || title.getText() == null || title.getText().equals(" "))
         title.setText("Ingrese el Título");
-  /*     if(date.getText().equals("") || date.getText() == null || date.getText().equals(" "))
-        date.setText("Ingrese la Fecha de Publicación");
-*/
+
        if(author.getText().equals("") || author.getText() == null || author.getText().equals(" "))
         author.setText("Ingrese el nombre del Autor/es");
        if(category.getText().equals("") || category.getText() == null || category.getText().equals(" "))
-        category.setText("Ingrese la Categoría del Libro");
- /*      if(edit.getText().equals("") || edit.getText() == null || edit.getText().equals(" "))
-        edit.setText("Ingrese la edición");
-       if(lang.getText().equals("") || lang.getText() == null || lang.getText().equals(" "))
-        lang.setText("Ingrese el idioma del Libro");
-       if(pages.getText().equals("") || pages.getText() == null || pages.getText().equals(" "))
-        pages.setText("Ingrese la cantidad de páginas totales");
-       if(descr.getText().equals("") || descr.getText() == null || descr.getText().equals(" "))
-        descr.setText("Ingrese la descripción del Libro");
-*/
+        category.setText("Ingrese el genero del Libro");
+ 
        if(stock.getText().equals("") || stock.getText() == null || stock.getText().equals(" "))
         stock.setText("Cantidad Total");
-       if(ejem.getText().equals("") || ejem.getText() == null || ejem.getText().equals(" "))
-        ejem.setText("Ingrese la cantidad de ejemplares");
+      
     }//GEN-LAST:event_availableMousePressed
 
     private void availableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_availableActionPerformed
@@ -542,12 +429,10 @@ public class UpBooks extends javax.swing.JPanel {
     private void buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMousePressed
         if(id.getText().equals("Ingrese el ISBN del Libro") || title.getText().equals("Ingrese el Título")
            /* || date.getText().equals("Ingrese la Fecha de Publicación") */ || author.getText().equals("Ingrese el nombre del Autor/es")
-            || category.getText().equals("Ingrese la Categoría del Libro")|| 
-                /* edit.getText().equals("Ingrese la edición")
-            || lang.getText().equals("Ingrese el idioma del Libro")|| pages.getText().equals("Ingrese la cantidad de páginas totales")
-            || descr.getText().equals("Ingrese la descripción del Libro")|| */ 
+            || category.getText().equals("Ingrese el genero del Libro")|| 
+          
                 stock.getText().equals("Cantidad Total")
-            || available.getText().equals("Cantidad a prestar")|| ejem.getText().equals("Ingrese la cantidad de ejemplares")){
+            || available.getText().equals("Cantidad a prestar")){
             javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             id.requestFocus();
         }
@@ -558,15 +443,11 @@ public class UpBooks extends javax.swing.JPanel {
          //   String bdate = date.getText();
             String bathor = author.getText();
             String bcategory = category.getText();
-        /*  String bedit = edit.getText();
-            String blang = lang.getText();
-            String bpages = pages.getText();
-            String bdescr = descr.getText();
-        */
+        
             String bstock = stock.getText();
             String bavailable = available.getText();
-            String bejem = ejem.getText();
-            int pag=0;
+        //    String bejem = ejem.getText();
+      //      int pag=0;
             int stc=0;
             int av=0;
 
@@ -574,22 +455,22 @@ public class UpBooks extends javax.swing.JPanel {
                     || */ bathor == null || "".equals(bathor) || bcategory == null || "".equals(bcategory) 
                     || /* bedit == null || "".equals(bedit) || blang == null || "".equals(blang) || bpages == null || "".equals(bpages) 
                     || bdescr == null || "".equals(bdescr) || */ bstock == null || "".equals(bstock) 
-                    || bavailable == null || "".equals(bavailable) || bejem == null || "".equals(bejem)){
+                    || bavailable == null || "".equals(bavailable) ){
                 javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                 id.requestFocus();
             }
             else{ 
                 try{
-               //     pag = Integer.parseInt(bpages);
+               //     
                     stc = Integer.parseInt(bstock);
                     av = Integer.parseInt(bavailable);
 
                     try {
                         if(edition)
-                            EditBook(bid, btitle, bathor, bcategory, stc, av, bejem);
+                            EditBook(bid, btitle, bathor, bcategory, stc, av);
                      //    EditBook(bid, btitle, bdate, bathor, bcategory, bedit, blang, pag, bdescr, stc, av, bejem);
                         else
-                            InsertBook(bid, btitle, bathor, bcategory, stc, av, bejem);
+                            InsertBook(bid, btitle, bathor, bcategory, stc, av);
                      //InsertBook(bid, btitle, bdate, bathor, bcategory, bedit, blang, pag, bdescr, stc, av, bejem);
 
                         id.setText("");
@@ -597,30 +478,26 @@ public class UpBooks extends javax.swing.JPanel {
                 //        date.setText("");
                         author.setText("");
                         category.setText("");
-               /*         edit.setText("");
-                        lang.setText("");
-                        pages.setText("");
-                        descr.setText("");
-              */
+              
                         stock.setText("");
                         available.setText("");
-                        ejem.setText("");
+                       
 
                         if(edition){
                             Books p1 = new Books();
                             p1.setSize(750, 430);
                             p1.setLocation(5, 5);
 
-                            content.removeAll();
-                            content.add(p1, BorderLayout.CENTER);
-                            content.revalidate();
-                            content.repaint();
+                            Login.removeAll();
+                            Login.add(p1, BorderLayout.CENTER);
+                            Login.revalidate();
+                            Login.repaint();
                         }
                     } catch (SQLException ex) {
                         Logger.getLogger(UpUsers.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }catch(NumberFormatException ex){
-                    javax.swing.JOptionPane.showMessageDialog(this, "Las páginas, el Stock y el Disponible, deben ser números enteros. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(this, "El Stock y el Disponible, deben ser números enteros. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                     id.requestFocus();
                 }
 
@@ -635,20 +512,20 @@ public class UpBooks extends javax.swing.JPanel {
         panel.setBackground(new Color(18,90,173));
     }
     
-    public void InsertBook(String id, String titu, String auth, String cate, int stck, int avai, String ej) throws SQLException{
+    public void InsertBook(String id, String titu, String auth, String cate, int stck, int avai) throws SQLException{
  //       (String id, String titu, String fech, String auth, String cate, String ed, String idiom, int pags, String desc, int stck, int avai, String ej) throws SQLException{
         Statement stm = reg.createStatement();
         
-        stm.executeUpdate("INSERT INTO `books` (`id`, `title`, `author`, `category`, `ejemplares`, `stock`, `available`) VALUES ('"+id+"', '"+titu+"', '"+ auth +"', '"+cate+"', '"+ej+"', '"+stck+"', '"+avai+"')");
+        stm.executeUpdate("INSERT INTO `books` (`id`, `title`, `author`, `category`, `stock`, `available`) VALUES ('"+id+"', '"+titu+"', '"+ auth +"', '"+cate+"', '"+stck+"', '"+avai+"')");
       //     stm.executeUpdate("INSERT INTO `books` (`id`, `title`, `date`, `author`, `category`, `edit`, `lang`, `pages`, `description`, `ejemplares`, `stock`, `available`) VALUES ('"+id+"', '"+titu+"', '"+ fech +"', '"+ auth +"', '"+cate+"', '"+ed+"', '"+idiom+"', '"+pags+"', '"+desc+"', '"+ej+"', '"+stck+"', '"+avai+"')");
         javax.swing.JOptionPane.showMessageDialog(this, "¡Libro registrado correctamente! \n", "HECHO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         
     }
     
-    public void EditBook(String id, String titu, String auth, String cate, int stck, int avai, String ej) throws SQLException{
+    public void EditBook(String id, String titu, String auth, String cate, int stck, int avai) throws SQLException{
         Statement stm = reg.createStatement();
         
-        stm.executeUpdate("UPDATE `books` SET `id` = '"+id+"', `title` = '"+titu+"', `author` = '"+auth+"', `category` = '"+cate+"', `ejemplares` = '"+ej+"', `stock` = '"+stck+"', `available` = '"+avai+"' WHERE `id` = '"+ origId +"';");
+        stm.executeUpdate("UPDATE `books` SET `id` = '"+id+"', `title` = '"+titu+"', `author` = '"+auth+"', `category` = '"+cate+"', `stock` = '"+stck+"', `available` = '"+avai+"' WHERE `id` = '"+ origId +"';");
       // stm.executeUpdate("UPDATE `books` SET `id` = '"+id+"', `title` = '"+titu+"', `date` = '"+fech+"', `author` = '"+auth+"', `category` = '"+cate+"', `edit` = '"+ed+"', `lang` = '"+idiom+"', `pages` = '"+pags+"', `description` = '"+desc+"', `ejemplares` = '"+ej+"', `stock` = '"+stck+"', `available` = '"+avai+"' WHERE `id` = '"+ origId +"';");
         javax.swing.JOptionPane.showMessageDialog(this, "¡Libro editado correctamente! \n", "HECHO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         
@@ -656,7 +533,6 @@ public class UpBooks extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Text13;
-    private javax.swing.JLabel Text14;
     private javax.swing.JLabel Text15;
     private javax.swing.JLabel Text3;
     private javax.swing.JLabel Text6;
@@ -668,12 +544,10 @@ public class UpBooks extends javax.swing.JPanel {
     private javax.swing.JPanel body;
     private javax.swing.JPanel button;
     private javax.swing.JTextField category;
-    private javax.swing.JTextField ejem;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;

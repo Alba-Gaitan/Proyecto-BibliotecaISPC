@@ -14,8 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JPanel;
-import static biblioteca_virtual.Dashboard.content;
 import java.awt.BorderLayout;
+import static biblioteca_virtual.Dashboard.Login;
 
 /**
  *
@@ -95,8 +95,8 @@ public class Books extends javax.swing.JPanel {
         });
         add(bid, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 620, 30));
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        button.setBackground(new java.awt.Color(63, 72, 204));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
@@ -118,8 +118,8 @@ public class Books extends javax.swing.JPanel {
 
         add(button, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 80, 30));
 
-        nuevo.setBackground(new java.awt.Color(18, 90, 173));
-        nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nuevo.setBackground(new java.awt.Color(63, 72, 204));
+        nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nuevo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 nuevoMouseEntered(evt);
@@ -146,8 +146,8 @@ public class Books extends javax.swing.JPanel {
 
         add(nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 395, 80, -1));
 
-        edit.setBackground(new java.awt.Color(18, 90, 173));
-        edit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        edit.setBackground(new java.awt.Color(63, 72, 204));
+        edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 editMouseEntered(evt);
@@ -169,8 +169,8 @@ public class Books extends javax.swing.JPanel {
 
         add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 395, 80, -1));
 
-        delete.setBackground(new java.awt.Color(18, 90, 173));
-        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        delete.setBackground(new java.awt.Color(63, 72, 204));
+        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 deleteMouseEntered(evt);
@@ -195,37 +195,36 @@ public class Books extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ISBN", "Título", "Autor", "Categoría", "Ejemplares", "Stock", "Disponibles"
+                "ISBN", "Título", "Autor", "Genero", "Stock", "Disponibles"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jTable1MousePressed(evt);
@@ -242,7 +241,8 @@ public class Books extends javax.swing.JPanel {
     }//GEN-LAST:event_bidMousePressed
 
     private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
-        setColor(button);
+        button.setBackground(new Color (0,156,223));
+     //   setColor(button);
     }//GEN-LAST:event_buttonMouseEntered
 
     private void buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseExited
@@ -255,18 +255,18 @@ public class Books extends javax.swing.JPanel {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
 
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }//GEN-LAST:event_jLabel3MousePressed
 
     private void nuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoMouseEntered
-        // TODO add your handling code here:
+       nuevo.setBackground(new Color (0,156,223));
     }//GEN-LAST:event_nuevoMouseEntered
 
     private void nuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoMouseExited
-        // TODO add your handling code here:
+        resetColor(nuevo);
     }//GEN-LAST:event_nuevoMouseExited
 
     private void nuevoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoMousePressed
@@ -275,22 +275,23 @@ public class Books extends javax.swing.JPanel {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
 
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }//GEN-LAST:event_nuevoMousePressed
 
     private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
-        // TODO add your handling code here:
+        edit.setBackground(new Color (0,156,223));
     }//GEN-LAST:event_editMouseEntered
 
     private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
-        // TODO add your handling code here:
+        resetColor(edit);
     }//GEN-LAST:event_editMouseExited
 
     private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
-        setColor(delete);
+        //setColor(delete);
+        delete.setBackground(new Color (0,156,223));
     }//GEN-LAST:event_deleteMouseEntered
 
     private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
@@ -315,23 +316,19 @@ public class Books extends javax.swing.JPanel {
                 int count = 0;
                 while(counter.next()){count++;}
 
-                String list[][] = new String[count][7];
+                String list[][] = new String[count][6];
                 int i = 0;
                 ResultSet re = stm.executeQuery("SELECT * FROM `books`");
                 while(re.next()){
                     list[i][0] = re.getString("id");
                     list[i][1] = re.getString("title");
-             //       list[i][2] = re.getString("date");
+             
                     list[i][2] = re.getString("author");
                     list[i][3] = re.getString("category");
-          /*          list[i][5] = re.getString("edit");
-                    list[i][6] = re.getString("lang");
-                    list[i][7] = re.getString("pages");
-                    list[i][8] = re.getString("description");
-          */
-                    list[i][4] = re.getString("ejemplares");
-                    list[i][5] = re.getString("stock");
-                    list[i][6] = re.getString("available");
+         
+                   
+                    list[i][4] = re.getString("stock");
+                    list[i][5] = re.getString("available");
                     i++;
                 }
                 String id = list[idcell][0];
@@ -374,23 +371,19 @@ public class Books extends javax.swing.JPanel {
                 int count = 0;
                 while(counter.next()){count++;}
 
-                String list[][] = new String[count][7];
+                String list[][] = new String[count][6];
                 int i = 0;
                 ResultSet re = stm.executeQuery("SELECT * FROM `books`");
                 while(re.next()){
                     list[i][0] = re.getString("id");
                     list[i][1] = re.getString("title");
-             //       list[i][2] = re.getString("date");
+     
                     list[i][2] = re.getString("author");
                     list[i][3] = re.getString("category");
-     /*               list[i][5] = re.getString("edit");
-                    list[i][6] = re.getString("lang");
-                    list[i][7] = re.getString("pages");
-                    list[i][8] = re.getString("description");
-        */
-                    list[i][4] = re.getString("ejemplares");
-                    list[i][5] = re.getString("stock");
-                    list[i][6] = re.getString("available");
+    
+                   
+                    list[i][4] = re.getString("stock");
+                    list[i][5] = re.getString("available");
                     i++;
                 }
                 String id = list[idcell][0];
@@ -400,26 +393,21 @@ public class Books extends javax.swing.JPanel {
                 else{
                     String bid = ""+list[idcell][0];
                     String btitle = list[idcell][1];
-       //             String bdate = list[idcell][2];
+ 
                     String bauthor = list[idcell][2];
                     String bcategory = list[idcell][3];
-     /*               String bedit = list[idcell][5];
-                    String blang = list[idcell][6];
-                    String bpages = list[idcell][7];
-                    String bdesc = list[idcell][8];
-      */
-                    String bejem = list[idcell][4];
-                    String bstock = list[idcell][5];
-                    String bavai = list[idcell][6];            
+       
+                    String bstock = list[idcell][4];
+                    String bavai = list[idcell][5];            
 
-                    UpBooks p1 = new UpBooks(bid, btitle, bdate, bauthor, bcategory, bedit, blang, bpages, bdesc, bejem, bstock, bavai);
+                    UpBooks p1 = new UpBooks(bid, btitle, bauthor, bcategory, bstock, bavai);
                     p1.setSize(750, 430);
                     p1.setLocation(5, 5);
 
-                    content.removeAll();
-                    content.add(p1, BorderLayout.CENTER);
-                    content.revalidate();
-                    content.repaint();
+                    Login.removeAll();
+                    Login.add(p1, BorderLayout.CENTER);
+                    Login.revalidate();
+                    Login.repaint();
                 }
             }
         } catch (SQLException ex) {
@@ -436,7 +424,7 @@ public class Books extends javax.swing.JPanel {
             int count = 0;
             while(counter.next()){count++;}
             
-            String list[][] = new String[count][7];
+            String list[][] = new String[count][6];
             int i = 0;
             ResultSet re = stm.executeQuery("SELECT * FROM `books` WHERE id LIKE '"+inf+"%'");
             while(re.next()){
@@ -445,22 +433,17 @@ public class Books extends javax.swing.JPanel {
  //           list[i][2] = re.getString("date");
             list[i][2] = re.getString("author");
             list[i][3] = re.getString("category");
- /*           list[i][5] = re.getString("edit");
-            list[i][6] = re.getString("lang");
-            list[i][7] = re.getString("pages");
-            list[i][8] = re.getString("description");
-*/
-            list[i][4] = re.getString("ejemplares");
-            list[i][5] = re.getString("stock");
-            list[i][6] = re.getString("available");
+    
+            list[i][4] = re.getString("stock");
+            list[i][5] = re.getString("available");
             i++;
         }
         
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
         list,
         new String [] {
-            "ID", "Título", "Autor", "Categoría", "Ejemplaresl", "Stock", "Disponibles"
-     // "ID", "Título", "Fecha de Pub.", "Autor", "Categoría", "Edición", "Idioma", "Páginas", "Descripción", "Ejemplaresl", "Stock", "Disponibles"
+            "ID", "Título", "Autor", "Categoría", "Stock", "Disponibles"
+     // "ID", "Título", "Fecha de Pub.", "Autor", "Categoría", "Edición", "Idioma", "Páginas", "Descripción", "Stock", "Disponibles"
         }));
         } catch (SQLException ex) {
             Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
@@ -485,30 +468,24 @@ public class Books extends javax.swing.JPanel {
         int count = 0;
         while(counter.next()){count++;}
         
-        String list[][] = new String[count][7];
+        String list[][] = new String[count][6];
         int i = 0;
         ResultSet re = stm.executeQuery("SELECT * FROM `books`");
         while(re.next()){
             list[i][0] = re.getString("id");
             list[i][1] = re.getString("title");
-      //    list[i][2] = re.getString("date");
+    
             list[i][2] = re.getString("author");
             list[i][3] = re.getString("category");
-     /*     list[i][5] = re.getString("edit");
-            list[i][6] = re.getString("lang");
-            list[i][7] = re.getString("pages");
-            list[i][8] = re.getString("description");
-    */
-            list[i][4] = re.getString("ejemplares");
-            list[i][5] = re.getString("stock");
-            list[i][6] = re.getString("available");
+            list[i][4] = re.getString("stock");
+            list[i][5] = re.getString("available");
             i++;
         }
         
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
         list,
         new String [] {
-            "ID", "Título", "Autor", "Categoría", "Ejemplaresl", "Stock", "Disponibles"
+            "ID", "Título", "Autor", "Categoría", "Stock", "Disponibles"
         }));
     }
 

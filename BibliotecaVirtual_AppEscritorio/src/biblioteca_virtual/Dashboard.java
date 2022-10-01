@@ -27,7 +27,7 @@ public class Dashboard extends javax.swing.JFrame {
         int year = now.getYear();
         int dia = now.getDayOfMonth();
         int month = now.getMonthValue();
-        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"," ;Septiembre"
+        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre"
             ,"Octubre","Noviembre","Diciembre"};
         fecha.setText("Hoy es "+dia+" de "+meses[month - 1]+" de "+year);
         
@@ -35,10 +35,10 @@ public class Dashboard extends javax.swing.JFrame {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }
 
     /**
@@ -58,27 +58,32 @@ public class Dashboard extends javax.swing.JFrame {
         btn_returns = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btn_users = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         btn_books = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         btn_reports = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        btn_reports1 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         btn_lends = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         app_name = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        app_name1 = new javax.swing.JLabel();
+        btn_login = new javax.swing.JPanel();
+        icologin = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         fecha = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         Title = new javax.swing.JPanel();
         red_squr = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
-        content = new javax.swing.JPanel();
+        Login = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -95,10 +100,10 @@ public class Dashboard extends javax.swing.JFrame {
         Background.setBackground(new java.awt.Color(255, 255, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Menu.setBackground(new java.awt.Color(13, 71, 161));
+        Menu.setBackground(new java.awt.Color(63, 72, 204));
         Menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_prin.setBackground(new java.awt.Color(21, 101, 192));
+        btn_prin.setBackground(new java.awt.Color(63, 72, 204));
         btn_prin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_prin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -120,11 +125,16 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Principal");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel5MousePressed(evt);
+            }
+        });
         btn_prin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        Menu.add(btn_prin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 270, 50));
+        Menu.add(btn_prin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 270, 50));
 
-        btn_returns.setBackground(new java.awt.Color(18, 90, 173));
+        btn_returns.setBackground(new java.awt.Color(63, 72, 204));
         btn_returns.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_returns.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_returns.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -149,36 +159,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4.setText("Devoluciones");
         btn_returns.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        Menu.add(btn_returns, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, -1));
+        Menu.add(btn_returns, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
 
-        btn_users.setBackground(new java.awt.Color(18, 90, 173));
-        btn_users.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_users.setPreferredSize(new java.awt.Dimension(270, 51));
-        btn_users.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_usersMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_usersMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_usersMousePressed(evt);
-            }
-        });
-        btn_users.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblioteca_virtual/images/account-multiple.png"))); // NOI18N
-        btn_users.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Usuarios");
-        btn_users.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
-
-        Menu.add(btn_users, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, -1));
-
-        btn_books.setBackground(new java.awt.Color(18, 90, 173));
+        btn_books.setBackground(new java.awt.Color(63, 72, 204));
         btn_books.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_books.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_books.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -203,9 +186,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel10.setText("Libros");
         btn_books.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        Menu.add(btn_books, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, -1));
+        Menu.add(btn_books, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, -1, -1));
 
-        btn_reports.setBackground(new java.awt.Color(18, 90, 173));
+        btn_reports.setBackground(new java.awt.Color(63, 72, 204));
         btn_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_reports.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_reports.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -230,9 +213,36 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel12.setText("Reportes");
         btn_reports.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        Menu.add(btn_reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, -1, -1));
+        btn_reports1.setBackground(new java.awt.Color(63, 72, 204));
+        btn_reports1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_reports1.setPreferredSize(new java.awt.Dimension(270, 51));
+        btn_reports1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_reports1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_reports1MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_reports1MousePressed(evt);
+            }
+        });
+        btn_reports1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_lends.setBackground(new java.awt.Color(18, 90, 173));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblioteca_virtual/images/file-chart.png"))); // NOI18N
+        btn_reports1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Reportes");
+        btn_reports1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
+
+        btn_reports.add(btn_reports1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, -1, -1));
+
+        Menu.add(btn_reports, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, -1, -1));
+
+        btn_lends.setBackground(new java.awt.Color(63, 72, 204));
         btn_lends.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_lends.setPreferredSize(new java.awt.Dimension(270, 51));
         btn_lends.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -257,50 +267,89 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel14.setText("Préstamos");
         btn_lends.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, 30));
 
-        Menu.add(btn_lends, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
+        Menu.add(btn_lends, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, -1, -1));
 
-        app_name.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        app_name.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         app_name.setForeground(new java.awt.Color(255, 255, 255));
-        app_name.setText("Biblioteca Popular");
-        Menu.add(app_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        app_name.setText("Popular");
+        app_name.setToolTipText("");
+        Menu.add(app_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 150, 40));
 
-        jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
-        Menu.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 20));
+        jSeparator2.setPreferredSize(new java.awt.Dimension(50, 5));
+        Menu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 190, 20));
+
+        app_name1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        app_name1.setForeground(new java.awt.Color(255, 255, 255));
+        app_name1.setText("Biblioteca");
+        app_name1.setToolTipText("");
+        Menu.add(app_name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 180, 40));
+
+        btn_login.setBackground(new java.awt.Color(63, 72, 204));
+        btn_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_loginMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btn_loginMousePressed(evt);
+            }
+        });
+        btn_login.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        icologin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblioteca_virtual/images/account-multiple.png"))); // NOI18N
+        btn_login.add(icologin, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 18, 36, 39));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Login Usuarios");
+        btn_login.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+
+        Menu.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 270, 60));
 
         Background.add(Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 640));
 
-        Header.setBackground(new java.awt.Color(25, 118, 210));
+        Header.setBackground(new java.awt.Color(63, 72, 144));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Administración/Control/Biblioteca");
 
-        fecha.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        fecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         fecha.setForeground(new java.awt.Color(255, 255, 255));
         fecha.setText("Hoy es Sábado 28 de Abril de 2018");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Los Lectores");
 
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(32, 32, 32)
                 .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(fecha))
-                .addContainerGap(310, Short.MAX_VALUE))
+                    .addGroup(HeaderLayout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(478, Short.MAX_VALUE))
+                    .addGroup(HeaderLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fecha)
+                        .addGap(33, 33, 33))))
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addGroup(HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
-        Background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 750, 150));
+        Background.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 750, 150));
 
         Title.setBackground(new java.awt.Color(255, 255, 255));
         Title.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -371,20 +420,20 @@ public class Dashboard extends javax.swing.JFrame {
 
         Background.add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, -1));
 
-        content.setBackground(new java.awt.Color(255, 255, 255));
+        Login.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
-        content.setLayout(contentLayout);
-        contentLayout.setHorizontalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
+        Login.setLayout(LoginLayout);
+        LoginLayout.setHorizontalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 750, Short.MAX_VALUE)
         );
-        contentLayout.setVerticalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        LoginLayout.setVerticalGroup(
+            LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 430, Short.MAX_VALUE)
         );
 
-        Background.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 750, 430));
+        Background.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 750, 430));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -423,7 +472,7 @@ public class Dashboard extends javax.swing.JFrame {
         setColor(btn_prin);
         resetColor(btn_lends);
         resetColor(btn_returns);
-        resetColor(btn_users);
+        resetColor(btn_login);
         resetColor(btn_books);
         resetColor(btn_reports);
         // Abrir sección
@@ -431,17 +480,17 @@ public class Dashboard extends javax.swing.JFrame {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }//GEN-LAST:event_btn_prinMousePressed
 
     private void btn_lendsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_lendsMousePressed
         resetColor(btn_prin);
         setColor(btn_lends);
         resetColor(btn_returns);
-        resetColor(btn_users);
+        resetColor(btn_login);
         resetColor(btn_books);
         resetColor(btn_reports);
         // Abrir sección
@@ -449,17 +498,17 @@ public class Dashboard extends javax.swing.JFrame {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }//GEN-LAST:event_btn_lendsMousePressed
 
     private void btn_returnsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnsMousePressed
         resetColor(btn_prin);
         resetColor(btn_lends);
         setColor(btn_returns);
-        resetColor(btn_users);
+        resetColor(btn_login);
         resetColor(btn_books);
         resetColor(btn_reports);
         // Abrir sección
@@ -467,35 +516,17 @@ public class Dashboard extends javax.swing.JFrame {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }//GEN-LAST:event_btn_returnsMousePressed
-
-    private void btn_usersMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usersMousePressed
-        resetColor(btn_prin);
-        resetColor(btn_lends);
-        resetColor(btn_returns);
-        setColor(btn_users);
-        resetColor(btn_books);
-        resetColor(btn_reports);
-        // Abrir sección
-        Users p1 = new Users();
-        p1.setSize(750, 430);
-        p1.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-    }//GEN-LAST:event_btn_usersMousePressed
 
     private void btn_booksMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_booksMousePressed
         resetColor(btn_prin);
         resetColor(btn_lends);
         resetColor(btn_returns);
-        resetColor(btn_users);
+        resetColor(btn_login);
         setColor(btn_books);
         resetColor(btn_reports);
         // Abrir sección
@@ -503,17 +534,17 @@ public class Dashboard extends javax.swing.JFrame {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }//GEN-LAST:event_btn_booksMousePressed
 
     private void btn_reportsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reportsMousePressed
         resetColor(btn_prin);
         resetColor(btn_lends);
         resetColor(btn_returns);
-        resetColor(btn_users);
+        resetColor(btn_login);
         resetColor(btn_books);
         setColor(btn_reports);
         // Abrir sección
@@ -521,10 +552,10 @@ public class Dashboard extends javax.swing.JFrame {
         p1.setSize(750, 430);
         p1.setLocation(0,0);
         
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();
     }//GEN-LAST:event_btn_reportsMousePressed
 
     private void red_squrMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_red_squrMousePressed
@@ -538,7 +569,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_lendsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_lendsMouseExited
         if(btn_prin.getBackground().getRGB() != -15574355 || btn_returns.getBackground().getRGB() != -15574355
-            || btn_users.getBackground().getRGB() != -15574355 || btn_books.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355)
+            || btn_books.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355
+            || btn_login.getBackground().getRGB() != -15574355)
             resetColor(btn_lends);
     }//GEN-LAST:event_btn_lendsMouseExited
 
@@ -549,7 +581,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_prinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_prinMouseExited
         if(btn_lends.getBackground().getRGB() != -15574355 || btn_returns.getBackground().getRGB() != -15574355
-            || btn_users.getBackground().getRGB() != -15574355 || btn_books.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355)
+            ||  btn_books.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355
+            || btn_login.getBackground().getRGB() != -15574355)
             resetColor(btn_prin);
     }//GEN-LAST:event_btn_prinMouseExited
 
@@ -560,20 +593,10 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_returnsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnsMouseExited
         if(btn_lends.getBackground().getRGB() != -15574355 || btn_prin.getBackground().getRGB() != -15574355
-            || btn_users.getBackground().getRGB() != -15574355 || btn_books.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355)
+            || btn_books.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355
+            || btn_login.getBackground().getRGB() != -15574355)
             resetColor(btn_returns);
     }//GEN-LAST:event_btn_returnsMouseExited
-
-    private void btn_usersMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usersMouseEntered
-        if(btn_users.getBackground().getRGB() == -15574355)
-            setColor(btn_users);
-    }//GEN-LAST:event_btn_usersMouseEntered
-
-    private void btn_usersMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usersMouseExited
-        if(btn_lends.getBackground().getRGB() != -15574355 || btn_prin.getBackground().getRGB() != -15574355
-            || btn_returns.getBackground().getRGB() != -15574355 || btn_books.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355)
-            resetColor(btn_users);
-    }//GEN-LAST:event_btn_usersMouseExited
 
     private void btn_booksMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_booksMouseEntered
         if(btn_books.getBackground().getRGB() == -15574355)
@@ -582,7 +605,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_booksMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_booksMouseExited
         if(btn_lends.getBackground().getRGB() != -15574355 || btn_prin.getBackground().getRGB() != -15574355
-            || btn_returns.getBackground().getRGB() != -15574355 || btn_users.getBackground().getRGB() != -15574355 || btn_reports.getBackground().getRGB() != -15574355)
+            || btn_returns.getBackground().getRGB() != -15574355 ||  btn_reports.getBackground().getRGB() != -15574355
+            || btn_login.getBackground().getRGB() != -15574355)
             resetColor(btn_books);
     }//GEN-LAST:event_btn_booksMouseExited
 
@@ -593,7 +617,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_reportsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reportsMouseExited
         if(btn_lends.getBackground().getRGB() != -15574355 || btn_prin.getBackground().getRGB() != -15574355
-            || btn_returns.getBackground().getRGB() != -15574355 || btn_users.getBackground().getRGB() != -15574355 || btn_books.getBackground().getRGB() != -15574355)
+            || btn_returns.getBackground().getRGB() != -15574355 || btn_books.getBackground().getRGB() != -15574355
+                || btn_login.getBackground().getRGB() != -15574355)
             resetColor(btn_reports);
     }//GEN-LAST:event_btn_reportsMouseExited
 
@@ -616,6 +641,48 @@ public class Dashboard extends javax.swing.JFrame {
         red_squr.setBackground(new Color(255,255,255));
         exit.setForeground(new Color(102,102,102));
     }//GEN-LAST:event_exitMouseExited
+
+    private void btn_reports1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reports1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_reports1MouseEntered
+
+    private void btn_reports1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reports1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_reports1MouseExited
+
+    private void btn_reports1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reports1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_reports1MousePressed
+
+    private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MousePressed
+
+    private void btn_loginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMousePressed
+      
+        // Aqui me debe dirigir a la pantalla de login
+        resetColor(btn_prin);
+        resetColor(btn_lends);
+        resetColor(btn_returns);
+  
+        resetColor(btn_books);
+        resetColor(btn_reports);
+        setColor(btn_login);
+        // Abrir sección
+        Login p1 = new Login();
+        p1.setSize(750, 430);
+        p1.setLocation(0,0);
+        
+        Login.removeAll();
+        Login.add(p1, BorderLayout.CENTER);
+        Login.revalidate();
+        Login.repaint();    
+    }//GEN-LAST:event_btn_loginMousePressed
+
+    private void btn_loginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_loginMouseEntered
+        if(btn_login.getBackground().getRGB() == -15574355)
+            setColor(btn_login);
+    }//GEN-LAST:event_btn_loginMouseEntered
 
     void setColor(JPanel panel){
         panel.setBackground(new Color(21,101,192));
@@ -661,32 +728,37 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JPanel Header;
+    public static javax.swing.JPanel Login;
     private javax.swing.JPanel Menu;
     private javax.swing.JPanel Title;
     private javax.swing.JLabel app_name;
+    private javax.swing.JLabel app_name1;
     private javax.swing.JPanel btn_books;
     private javax.swing.JPanel btn_lends;
+    private javax.swing.JPanel btn_login;
     private javax.swing.JPanel btn_prin;
     private javax.swing.JPanel btn_reports;
+    private javax.swing.JPanel btn_reports1;
     private javax.swing.JPanel btn_returns;
-    private javax.swing.JPanel btn_users;
-    public static javax.swing.JPanel content;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel fecha;
+    private javax.swing.JLabel icologin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel red_squr;
     // End of variables declaration//GEN-END:variables
 }

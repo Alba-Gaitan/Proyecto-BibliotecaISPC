@@ -112,6 +112,9 @@ public class Lendings extends javax.swing.JPanel {
         folio.setText("Ingrese el ID del usuario");
         folio.setBorder(null);
         folio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                folioMouseEntered(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 folioMousePressed(evt);
             }
@@ -123,8 +126,8 @@ public class Lendings extends javax.swing.JPanel {
         });
         add(folio, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 260, 30));
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        button.setBackground(new java.awt.Color(63, 72, 204));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
@@ -158,21 +161,21 @@ public class Lendings extends javax.swing.JPanel {
     }//GEN-LAST:event_book_idActionPerformed
 
     private void folioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folioMousePressed
-       if(folio.getText().equals("Ingrese el folio del usuario"))
+       if(folio.getText().equals("Ingrese el ID del usuario"))
         folio.setText("");
        if(book_id.getText().equals("") || book_id.getText() == null || book_id.getText().equals(" "))
-        book_id.setText("Ingrese el ID del Libro a prestar");
+        book_id.setText("Ingrese el ISBN del Libro a prestar");
     }//GEN-LAST:event_folioMousePressed
 
     private void book_idMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book_idMousePressed
-        if(book_id.getText().equals("Ingrese el ID del Libro a prestar"))
+        if(book_id.getText().equals("Ingrese el ISBN del Libro a prestar"))
             book_id.setText("");
         if(folio.getText().equals("") || folio.getText() == null || folio.getText().equals(" "))
-            folio.setText("Ingrese el folio del usuario");
+            folio.setText("Ingrese el ID del usuario");
     }//GEN-LAST:event_book_idMousePressed
 
     private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
-        setColor(button);
+        button.setBackground(new Color (0,156,223));
     }//GEN-LAST:event_buttonMouseEntered
 
     private void buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseExited
@@ -195,11 +198,11 @@ public class Lendings extends javax.swing.JPanel {
                 intfol = Integer.parseInt(folio.getText());
                 
                 if(intfol <= 0){
-                    javax.swing.JOptionPane.showMessageDialog(this, "El folio del usuario debe ser mayor a 0. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                    javax.swing.JOptionPane.showMessageDialog(this, "El ID del usuario debe ser mayor a 0. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                      folio.requestFocus();
                 }
             }catch(Exception ex){
-                javax.swing.JOptionPane.showMessageDialog(this, "El folio del usuario debe ser un número entero. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "El ID del usuario debe ser un número entero. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                  folio.requestFocus();
             }            
         }
@@ -208,12 +211,12 @@ public class Lendings extends javax.swing.JPanel {
             // Verificamos el usuario
             boolean pase = UserExist(intfol);
             if(!pase){
-                javax.swing.JOptionPane.showMessageDialog(this, "No existe ningún usuario con ese Folio. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "No existe ningún usuario con ese ID. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                  folio.requestFocus();
             }
             // Verificamos el libro
             else if(!BookExist(book)){
-                javax.swing.JOptionPane.showMessageDialog(this, "No existe ningún libro con esa ID. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "No existe ningún libro con ese ISBN. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                  book_id.requestFocus();
             }
             else if(CheckLending(intfol, book)){
@@ -221,7 +224,7 @@ public class Lendings extends javax.swing.JPanel {
                  book_id.requestFocus();
             }
             else if(!BookAvailable(book)){
-                javax.swing.JOptionPane.showMessageDialog(this, "Ya no hay más libros con esa ID para prestar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "Ya no hay más libros con ese ISBN para prestar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
                  book_id.requestFocus();
             }
             else{
@@ -238,6 +241,10 @@ public class Lendings extends javax.swing.JPanel {
     private void folioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_folioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_folioActionPerformed
+
+    private void folioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folioMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_folioMouseEntered
 
     void setColor(JPanel panel){
         panel.setBackground(new Color(21,101,192));

@@ -106,8 +106,8 @@ public class Returns extends javax.swing.JPanel {
         });
         add(folio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 260, 30));
 
-        button.setBackground(new java.awt.Color(18, 90, 173));
-        button.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        button.setBackground(new java.awt.Color(63, 72, 204));
+        button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
@@ -141,21 +141,22 @@ public class Returns extends javax.swing.JPanel {
     }//GEN-LAST:event_book_idActionPerformed
 
     private void folioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_folioMousePressed
-       if(folio.getText().equals("Ingrese el folio del usuario"))
+       if(folio.getText().equals("Ingrese el ID del usuario"))
         folio.setText("");
        if(book_id.getText().equals("") || book_id.getText() == null || book_id.getText().equals(" "))
-        book_id.setText("Ingrese el ID del Libro a devolver");
+        book_id.setText("Ingrese el ISBN del Libro a devolver");
     }//GEN-LAST:event_folioMousePressed
 
     private void book_idMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_book_idMousePressed
-        if(book_id.getText().equals("Ingrese el ID del Libro a devolver"))
+        if(book_id.getText().equals("Ingrese el ISBN del Libro a devolver"))
             book_id.setText("");
         if(folio.getText().equals("") || folio.getText() == null || folio.getText().equals(" "))
-            folio.setText("Ingrese el folio del usuario");
+            folio.setText("Ingrese el ID del usuario");
     }//GEN-LAST:event_book_idMousePressed
 
     private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
-        setColor(button);
+        button.setBackground(new Color (0,156,223));
+       
     }//GEN-LAST:event_buttonMouseEntered
 
     private void buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseExited

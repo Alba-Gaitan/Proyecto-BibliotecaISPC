@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package biblioteca_virtual;
 
 import java.awt.BorderLayout;
@@ -15,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JPanel;
-import static biblioteca_virtual.Dashboard.content;
+import static biblioteca_virtual.Dashboard.Login;
 
 /**
  *
@@ -58,8 +54,6 @@ public class Users extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         edit = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        nuevo = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -98,8 +92,8 @@ public class Users extends javax.swing.JPanel {
         });
         add(usrnm, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 620, 30));
 
-        search.setBackground(new java.awt.Color(18, 90, 173));
-        search.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        search.setBackground(new java.awt.Color(63, 72, 204));
+        search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         search.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 searchMouseEntered(evt);
@@ -121,8 +115,8 @@ public class Users extends javax.swing.JPanel {
 
         add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 80, 30));
 
-        delete.setBackground(new java.awt.Color(18, 90, 173));
-        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        delete.setBackground(new java.awt.Color(63, 72, 204));
+        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 deleteMouseEntered(evt);
@@ -136,6 +130,7 @@ public class Users extends javax.swing.JPanel {
         });
         delete.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setBackground(new java.awt.Color(63, 72, 204));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -144,8 +139,8 @@ public class Users extends javax.swing.JPanel {
 
         add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 395, 80, -1));
 
-        edit.setBackground(new java.awt.Color(18, 90, 173));
-        edit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        edit.setBackground(new java.awt.Color(63, 72, 204));
+        edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         edit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 editMouseEntered(evt);
@@ -159,6 +154,7 @@ public class Users extends javax.swing.JPanel {
         });
         edit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setBackground(new java.awt.Color(63, 72, 204));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -167,64 +163,36 @@ public class Users extends javax.swing.JPanel {
 
         add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 395, 80, -1));
 
-        nuevo.setBackground(new java.awt.Color(18, 90, 173));
-        nuevo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        nuevo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                nuevoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                nuevoMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                nuevoMousePressed(evt);
-            }
-        });
-        nuevo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Nuevo");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel3MousePressed(evt);
-            }
-        });
-        nuevo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
-
-        add(nuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 395, 80, -1));
-
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nombre", "Apellido", "Email"
+                "ID", "Nombre", "Apellido", "Email", "Password"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true
+                false, true, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -255,7 +223,7 @@ public class Users extends javax.swing.JPanel {
     }//GEN-LAST:event_usrnmMousePressed
 
     private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
-        setColor(delete);
+         delete.setBackground(new Color (0,156,223));
     }//GEN-LAST:event_deleteMouseEntered
 
     private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
@@ -263,52 +231,20 @@ public class Users extends javax.swing.JPanel {
     }//GEN-LAST:event_deleteMouseExited
 
     private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
-        // TODO add your handling code here:
+         edit.setBackground(new Color (0,156,223));
     }//GEN-LAST:event_editMouseEntered
 
     private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
-        // TODO add your handling code here:
+        resetColor(edit);
     }//GEN-LAST:event_editMouseExited
 
-    private void nuevoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nuevoMouseEntered
-
-    private void nuevoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nuevoMouseExited
-
     private void searchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseEntered
-        // TODO add your handling code here:
+        search.setBackground(new Color (0,156,223));
     }//GEN-LAST:event_searchMouseEntered
 
     private void searchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseExited
-        // TODO add your handling code here:
+        resetColor(search);
     }//GEN-LAST:event_searchMouseExited
-
-    private void nuevoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoMousePressed
-        // Abrir sección
-        UpUsers p1 = new UpUsers();
-        p1.setSize(750, 430);
-        p1.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-    }//GEN-LAST:event_nuevoMousePressed
-
-    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MousePressed
-        // Abrir sección
-        UpUsers p1 = new UpUsers();
-        p1.setSize(750, 430);
-        p1.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(p1, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint();
-    }//GEN-LAST:event_jLabel3MousePressed
 
     private void usrnmMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usrnmMouseReleased
         //nothing
@@ -332,7 +268,7 @@ public class Users extends javax.swing.JPanel {
                 int count = 0;
                 while(counter.next()){count++;}
 
-                String list[][] = new String[count][4];
+                String list[][] = new String[count][5];
                 int i = 0;
                 ResultSet re = stm.executeQuery("SELECT * FROM `users`");
                 while(re.next()){
@@ -340,9 +276,8 @@ public class Users extends javax.swing.JPanel {
                     list[i][1] = re.getString("name");
                     list[i][2] = re.getString("last_name_p");
                     list[i][3] = re.getString("email");
-         /*           list[i][4] = re.getString("domicilio");
-                    list[i][5] = re.getString("tel");
-           */
+                    list[i][4] = re.getString("pass");
+            
                     i++;
                 }
                 int id = Integer.parseInt(list[idcell][0]);
@@ -374,7 +309,7 @@ public class Users extends javax.swing.JPanel {
         try {
             int idcell = jTable1.getSelectedRow();
             if(idcell <= -1){
-                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar el usuario a borrar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar el usuario a editar. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             }
             else{
                 
@@ -384,7 +319,7 @@ public class Users extends javax.swing.JPanel {
                 int count = 0;
                 while(counter.next()){count++;}
 
-                String list[][] = new String[count][4];
+                String list[][] = new String[count][5];
                 int i = 0;
                 ResultSet re = stm.executeQuery("SELECT * FROM `users`");
                 while(re.next()){
@@ -392,9 +327,8 @@ public class Users extends javax.swing.JPanel {
                     list[i][1] = re.getString("name");
                     list[i][2] = re.getString("last_name_p");
                     list[i][3] = re.getString("email");
-      /*              list[i][4] = re.getString("domicilio");
-                    list[i][5] = re.getString("tel");
-      */
+                    list[i][4] = re.getString("pass");
+    
                     i++;
                 }
                 int id = Integer.parseInt(list[idcell][0]);
@@ -406,19 +340,18 @@ public class Users extends javax.swing.JPanel {
                     String usname = list[idcell][1];
                     String usap1 = list[idcell][2];
                     String usap2 = list[idcell][3];
-         /*           String usdom = list[idcell][4];
-                    String ustel = list[idcell][5];
-          */
+                    String password = list[idcell][4];
+        
 
          //           UpUsers p1 = new UpUsers(usid, usname, usap1, usap2, usdom, ustel);
-                    UpUsers p1 = new UpUsers(usid, usname, usap1, usap2);
+                    UpUsers p1 = new UpUsers(usid, usname, usap1, usap2, password);
                     p1.setSize(750, 430);
                     p1.setLocation(0, 0);
 
-                    content.removeAll();
-                    content.add(p1, BorderLayout.CENTER);
-                    content.revalidate();
-                    content.repaint();
+                    Login.removeAll();
+                    Login.add(p1, BorderLayout.CENTER);
+                    Login.revalidate();
+                    Login.repaint();
                 }
             }
         } catch (SQLException ex) {
@@ -435,7 +368,7 @@ public class Users extends javax.swing.JPanel {
             int count = 0;
             while(counter.next()){count++;}
             
-            String list[][] = new String[count][4];
+            String list[][] = new String[count][5];
             int i = 0;
             ResultSet re = stm.executeQuery("SELECT * FROM `users` WHERE name LIKE '"+inf+"%'");
             while(re.next()){
@@ -443,8 +376,8 @@ public class Users extends javax.swing.JPanel {
                 list[i][1] = re.getString("name");
                 list[i][2] = re.getString("last_name_p");
                 list[i][3] = re.getString("email");
-         /*       list[i][4] = re.getString("domicilio");
-                list[i][5] = re.getString("tel");
+                list[i][4] = re.getString("pass");
+           /*      list[i][5] = re.getString("tel");
                */
                 i++;
             }
@@ -453,7 +386,7 @@ public class Users extends javax.swing.JPanel {
                     list,
                     new String [] {
                 //        "ID", "Nombre", "Apellido P.", "Apellido M.", "Domicilio", "Teléfono"
-                        "ID", "Nombre", "Apellido", "Email"
+                        "ID", "Nombre", "Apellido", "Email", "Password"
                     }));
         } catch (SQLException ex) {
             Logger.getLogger(Users.class.getName()).log(Level.SEVERE, null, ex);
@@ -478,7 +411,7 @@ public class Users extends javax.swing.JPanel {
         int count = 0;
         while(counter.next()){count++;}
         
-        String list[][] = new String[count][4];
+        String list[][] = new String[count][5];
         int i = 0;
         ResultSet re = stm.executeQuery("SELECT * FROM `users`");
         while(re.next()){
@@ -486,8 +419,8 @@ public class Users extends javax.swing.JPanel {
             list[i][1] = re.getString("name");
             list[i][2] = re.getString("last_name_p");
             list[i][3] = re.getString("email");
-   /*         list[i][4] = re.getString("domicilio");
-            list[i][5] = re.getString("tel");
+            list[i][4] = re.getString("pass");
+ /*           list[i][5] = re.getString("tel");
 */
             i++;
         }
@@ -496,7 +429,7 @@ public class Users extends javax.swing.JPanel {
         list,
         new String [] {
          //   "ID", "Nombre", "Apellido P.", "Apellido M.", "Domicilio", "Teléfono"
-                "ID", "Nombre", "Apellido", "Email"
+                "ID", "Nombre", "Apellido", "Email", "Password"
         }));
     }
 
@@ -507,12 +440,10 @@ public class Users extends javax.swing.JPanel {
     private javax.swing.JPanel edit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JPanel nuevo;
     private javax.swing.JPanel search;
     private javax.swing.JTextField usrnm;
     // End of variables declaration//GEN-END:variables

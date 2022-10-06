@@ -29,6 +29,7 @@ ANGULAR (Módulos / Componentes y conexión mediante servicios)
 
 ✔️  Gil Camila.\
 ✔️  Storello Brenda.\
+✔️  Ledesma Sebastian.\
 ✔️  Gaitan Alba.
 
 

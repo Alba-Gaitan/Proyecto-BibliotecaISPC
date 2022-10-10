@@ -1,0 +1,4 @@
+lippia\web\services\HomeServices.class
+lippia\web\steps\AutomationPracticeSteps.class
+lippia\web\reporters\CucumberReporter.class
+lippia\web\constants\HomeConstants.class

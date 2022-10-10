@@ -25,6 +25,12 @@ CSS /Bootstrap (a elección)
 JAVASCRIPT (opcional) 
 ANGULAR (Módulos / Componentes y conexión mediante servicios)
 
+## Integrantes
+
+✔️  Gil Camila.\
+✔️  Storello Brenda.\
+✔️  Ledesma Sebastian.\
+✔️  Gaitan Alba.
 
 
 # ITPLibrary

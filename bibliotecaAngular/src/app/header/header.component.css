@@ -1,0 +1,37 @@
+header{
+	background: #313131; 
+	padding-top: 10px;
+	padding-bottom: 0px;
+	position: fixed;
+	width: 100%;
+	z-index: 34242;
+}
+
+.principal{
+	background: #313131;
+	height: 90vh;
+	background: url(https://th.bing.com/th/id/R.b46822192dc259484fb0ac9830be0b0e?rik=CKlab6Lh7QsP2A&pid=ImgRaw&r=0)no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.vertical-centered-text {
+  -ms-display: flex;
+  display: flex;
+  /* alineacion vertical */
+  align-items: center;
+   /* alineacion horizontal */
+  justify-content: center;
+}
+
+h1{
+    color: #000000;
+}
+h2{
+	font-family: Staatliches;
+	font-size: 100px;
+	color: #f1f1f1;
+}
+

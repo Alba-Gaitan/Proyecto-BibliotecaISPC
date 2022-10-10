@@ -1,10 +1,10 @@
-#Proyecto Gestión Biblioteca 
+# Proyecto Gestión Biblioteca 
 
 Llegó una solicitud a la Consultora ISPC para renovar un sistema de gestión de libros para la “Biblioteca Popular Los Lectores”.
 Hay que analizar el caso propuesto con los requerimientos entregados por el cliente potencial. Este cliente solicita que se anexe a la aplicación de escritorio, un entorno web para autogestionar las reservas de libros por cada uno de los socios.
 
-#MANOS A LA OBRA!
-#MODELADO DE DATOS y CLASES
+# MANOS A LA OBRA!
+# MODELADO DE DATOS y CLASES
 
 En base a lo que nos brindó el cliente, actualizar (generar en UML nuevos diagramas de Caso de Uso, Clases, secuencia) 
 Revisar DER (Diagrama de Entidad Relación) y Modelo Relacional si contiene tablas necesarias y todos los campos necesarios de acuerdo a las Entidades y Atributos.
@@ -16,7 +16,7 @@ PARA el BACKEND
 4-Cuando se reserva un libro (por defecto con 5 días ) cambiarlo a 15 días.
 5-Analizar si el sistema tiene atributos que tal vez no sean necesarios en  Usuarios y libros . (Modificar para que sea más ameno).
 
-#PARA el FRONTEND
+# PARA el FRONTEND
 
 Convertir el entorno gráfico de escritorio en Aplicación Web. (queda a libre elección la estética/identidad institucional de la aplicación) empleando los recursos ya aprendidos: -
 
@@ -31,6 +31,11 @@ ANGULAR (Módulos / Componentes y conexión mediante servicios)
 ✔️  Storello Brenda.\
 ✔️  Ledesma Sebastian.\
 ✔️  Gaitan Alba.
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63f80f235fb99dd73e5c78e8cc80f9aa539d634c
 
 
 # ITPLibrary

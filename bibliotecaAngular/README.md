@@ -1,27 +1,72 @@
-# Biblio
+# Proyecto Gestión Biblioteca 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Llegó una solicitud a la Consultora ISPC para renovar un sistema de gestión de libros para la “Biblioteca Popular Los Lectores”.
+Hay que analizar el caso propuesto con los requerimientos entregados por el cliente potencial. Este cliente solicita que se anexe a la aplicación de escritorio, un entorno web para autogestionar las reservas de libros por cada uno de los socios.
 
-## Development server
+# MANOS A LA OBRA!
+# MODELADO DE DATOS y CLASES
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+En base a lo que nos brindó el cliente, actualizar (generar en UML nuevos diagramas de Caso de Uso, Clases, secuencia) 
+Revisar DER (Diagrama de Entidad Relación) y Modelo Relacional si contiene tablas necesarias y todos los campos necesarios de acuerdo a las Entidades y Atributos.
+PARA el BACKEND
 
-## Code scaffolding
+1-Hacer que el sistema funcione con base de datos.
+2-Crear el jar y ejecutarlo desde acceso directo, armar script.
+3-Quitar mensajes del sistema si es que los posee(Debug)
+4-Cuando se reserva un libro (por defecto con 5 días ) cambiarlo a 15 días.
+5-Analizar si el sistema tiene atributos que tal vez no sean necesarios en  Usuarios y libros . (Modificar para que sea más ameno).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# PARA el FRONTEND
 
-## Build
+Convertir el entorno gráfico de escritorio en Aplicación Web. (queda a libre elección la estética/identidad institucional de la aplicación) empleando los recursos ya aprendidos: -
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+HTML
+CSS /Bootstrap (a elección)
+JAVASCRIPT (opcional) 
+ANGULAR (Módulos / Componentes y conexión mediante servicios)
 
-## Running unit tests
+## Integrantes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+✔️  Gil Camila.\
+✔️  Storello Brenda.\
+✔️  Ledesma Sebastian.\
+✔️  Gaitan Alba.
 
-## Running end-to-end tests
+<<<<<<< HEAD
+=======
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+>>>>>>> 63f80f235fb99dd73e5c78e8cc80f9aa539d634c
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# ITPLibrary
+Basic system for managing a library on Java. It's a school project that I did for Object Oriented Programming. Programmed in Java.
+
+## Features
+✔️ Graphic interface with Material Design style.\
+✔️ Management of Leagues, Tournaments, Journeys, Teams, Coaches, Referees and Players.\
+✔️ MySQL database connection.\
+✔️ Management of books, loans and returns.\
+✔️ Penalties for late returns.\
+✔️ Movement logs.\
+✔️ Lookup tables.
+
+## Previews
+
+<p align="center">
+  <kbd>
+    <img src="https://i.ibb.co/ngb5Fz1/Imagen1.png"></img>
+    <img src="https://i.ibb.co/Fb5jzqD/Imagen2.png"></img>
+    <img src="https://i.ibb.co/cDkTQp0/Imagen3.png"></img>
+    <img src="https://i.ibb.co/Db7MbL2/Imagen4.png"></img>
+    <img src="https://i.ibb.co/hLpVJ3g/Imagen5.png"></img>
+    <img src="https://i.ibb.co/3N3H5LZ/Imagen6.png"></img>
+    <img src="https://i.ibb.co/3fPvLTG/Imagen7.png"></img>
+    <img src="https://i.ibb.co/87fjj12/Imagen8.png"></img>
+  </kbd>
+</p>
+
+## Getting Started
+Import the java project in your preferred IDE and import the database. Just edit the class `Connect.class` with your database connection credentials.
+
+### Important
+Consider download the [mysql-connector-java-5.1.13](http://www.java2s.com/Code/JarDownload/mysql/mysql-connector-java-5.1.13.jar.zip) and import it to the project before compiling.
